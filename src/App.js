@@ -6,8 +6,8 @@ import Topbar from "./scenes/global/Topbar";
 import DashBoard from "./scenes/dashboard";
 import Sidebar from "./scenes/global/Sidebar";
 import SidebarC from "./scenes/global/Sidebar";
-// import Team from "./scenes/team";
-// import Contacts from "./scenes/contacts";
+import Team from "./scenes/team";
+import Contacts from "./scenes/contacts";
 // import Invoice from "./scenes/invoice";
 // import Team from "./scenes/team";
 // import Bar from "./scenes/bar";
@@ -17,21 +17,23 @@ import SidebarC from "./scenes/global/Sidebar";
 
 function App() {
   const [theme, colorMode] = useMode();
+  const [isSidebar, setIsSidebar] = useState(true);
   return (
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <div className="app">
-          <SidebarC />
+          <SidebarC isSideBar={isSidebar} />
           <main className="content">
-            <Topbar />
+            <Topbar setIsSidebar={setIsSidebar} />
 
             <Routes>
               <Route path="/" element={<DashBoard />} />
-              {/* <Route path="/team" element ={<Team/>}/>
-              <Route path="/bar" element ={<Bar/>}/>
-              <Route path="/contacts" element ={<Contacts/>}/>
-              <Route path="/invoice" element ={<Invoice/>}/> */}
+              <Route path="/team" element={<Team />} />
+
+              <Route path="/contacts" element={<Contacts />} />
+              {/* <Route path="/invoice" element ={<Invoice/>}/>
+              <Route path="/bar" element ={<Bar/>}/> */}
             </Routes>
           </main>
         </div>
