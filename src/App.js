@@ -8,9 +8,10 @@ import Sidebar from "./scenes/global/Sidebar";
 import SidebarC from "./scenes/global/Sidebar";
 import Team from "./scenes/team";
 import Contacts from "./scenes/contacts";
+import Pie from "./scenes/pie";
 // import Invoice from "./scenes/invoice";
 // import Team from "./scenes/team";
-// import Bar from "./scenes/bar";
+import Line from "./scenes/line";
 // import Sidebar from "./scenes/global/Sidebar";
 // import Sidebar from "./scenes/global/Sidebar";
 // import Sidebar from "./scenes/global/Sidebar";
@@ -32,8 +33,8 @@ function App() {
               <Route path="/team" element={<Team />} />
 
               <Route path="/contacts" element={<Contacts />} />
-              {/* <Route path="/invoice" element ={<Invoice/>}/>
-              <Route path="/bar" element ={<Bar/>}/> */}
+              <Route path="/pie" element={<Pie />} />
+              <Route path="/line" element={<Line />} />
             </Routes>
           </main>
         </div>
